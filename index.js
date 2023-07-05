@@ -22,7 +22,7 @@ const generateMarkdown = require('./utils/generateMarkdown.js');
  * @property {string} test          -Test Instructions
  * @property {string} gitHub        -User GitHub Profile
  * @property {string} email         -User Email
- * @property {object} questions      -Questions for user input
+ * @property {array} questions      -Questions for user input
  * @method generateREADME()         -Generates a README.md file in the working directory
  */
 class README{
