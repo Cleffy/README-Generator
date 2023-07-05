@@ -22,7 +22,7 @@ const generateMarkdown = require('./utils/generateMarkdown.js');
  * @property {string} test          -Test Instructions
  * @property {string} gitHub        -User GitHub Profile
  * @property {string} email         -User Email
- * @property {array} questions      -Questions for user input
+ * @property {object} questions      -Questions for user input
  * @method generateREADME()         -Generates a README.md file in the working directory
  */
 class README{
@@ -31,15 +31,106 @@ class README{
         this.description;
         this.installation;
         this.usage;
-        this.contribution;
+        this.contributing;
         this.test;
+        this.faq;
         this.gitHub;
         this.email;
-        this.questions = [];
+        this.questions = [{
+                name: 'title',
+                type: 'input',
+                message: "What is the title of the project?"
+            },
+            {
+                name: 'description',
+                type: 'input',
+                message: "Give a small summary of the project."
+            }];
     }
-    generateREADME(){
-        let content = '';
-        fs.writeFileSync('./README.md', content);
+    async generateREADME(){
+        try{
+            await this.askQuestions();
+            let content = '';
+            content += this.generateTitle();
+            content += this.generateDescription();
+            content += this.generateTableOfContents();
+            content += this.generateInstallation();
+            content += this.generateUsage();
+            content += this.generateLicense();
+            content += this.generateContributing();
+            content += this.generateTests();
+            content += this.generateFAQ();
+            fs.writeFileSync('./README.md', content);
+            console.log(content);
+        }
+        catch(error){
+            console.log(error);
+        }
+    }
+    generateTitle(){
+        return generateMarkdown.generateH1(this.title);
+    }
+    generateDescription(){
+        let description = '';
+        description += generateMarkdown.generateH2('Description');
+        description += generateMarkdown.generateText(this.description);
+        return description;
+    }
+    generateTableOfContents(){
+        let tableOfContents = '';
+        tableOfContents += generateMarkdown.generateH2('Table of Contents');
+        if(this.installation != ''){
+            tableOfContents += generateMarkdown.generateLinkedListItem('Installation');
+        }
+        tableOfContents += generateMarkdown.generateLinkedListItem('Usage');
+        tableOfContents += generateMarkdown.generateLinkedListItem('License');
+        tableOfContents += generateMarkdown.generateLinkedListItem('Contributing');
+        tableOfContents += generateMarkdown.generateLinkedListItem('Tests');
+        tableOfContents += generateMarkdown.generateLinkedListItem('FAQ');
+        return tableOfContents;
+    }
+    generateInstallation(){
+        let installation = '';
+        installation += generateMarkdown.generateLinkedH2('Installation');
+        installation += generateMarkdown.generateText(this.installation);
+        return installation;
+    }
+    generateUsage(){
+        let usage = '';
+        usage += generateMarkdown.generateLinkedH2('Usage');
+        usage += generateMarkdown.generateText(this.usage);
+        return usage;
+    }
+    generateLicense(){
+        let license = '';
+        license += generateMarkdown.generateLinkedH2('License');
+        license += generateMarkdown.generateText(this.license);
+        return license;
+    }
+    generateContributing(){
+        let contributing = '';
+        contributing += generateMarkdown.generateLinkedH2('Contributing');
+        contributing += generateMarkdown.generateText(this.contributing);
+        return contributing;
+    }
+    generateTests(){
+        let tests = '';
+        tests += generateMarkdown.generateLinkedH2('Tests');
+        tests += generateMarkdown.generateText(this.tests);
+        return tests;
+    }
+    generateFAQ(){
+        let faq = '';
+        faq += generateMarkdown.generateLinkedH2('FAQ');
+        faq += generateMarkdown.generateText(this.faq);
+        return faq;
+    }
+    async askQuestions(){
+        await inquirer.prompt(this.questions)
+        .then((data) => {
+            this.title = data.title;
+            this.description = data.description;
+        })
     }
 }
 // TODO: Create a function to initialize app
