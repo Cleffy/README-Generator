@@ -1,11 +1,11 @@
 class License{
-    constructor(title, link, badge, description){
+    constructor(title, link, badge){
       this.title = title;
       this.link = link;
       this.badge = badge;
-      this.description = description;
-      this.year = 'year';
-      this.owner = 'owner';
+      this.description = 'description';
+      this.year = '';
+      this.owner = '';
       this.programDescription = '';
     }
   }
