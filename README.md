@@ -1,6 +1,6 @@
-# README Generator
+# Readme
   ## Description
-  Creates a README.md file
+  A ummeyr
   ## Table of Contents
   [Installation](#Installation)  
   [Usage](#Usage)  
@@ -9,15 +9,15 @@
   [Tests](#Tests)  
   [FAQ](#FAQ)  
   ## <div id="Installation">Installation</div>
-  Clone the project and in the terminal run 'node index.js'
+  you put it in the coconut
   ## <div id="Usage">Usage</div>
-  Run 'node index.js
+  I don't know
   ## <div id="License">License</div>
-  MIT License
+  Apache 2.0 License
   ## <div id="Contributing">Contributing</div>
-  Cleffy
+  Me
   ## <div id="Tests">Tests</div>
-  
+  Rack em
   ## <div id="FAQ">FAQ</div>
-  
+  Stack em
   
