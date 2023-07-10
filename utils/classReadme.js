@@ -134,7 +134,7 @@ class README{
         this.usage;
         this.contributing;
         this.test;
-        this.faq;
+        this.contact;
         this.gitHub;
         this.email;
         this.license;
@@ -183,9 +183,9 @@ class README{
                 message: "What are some tests for this project?"
             },
             {
-                name: 'faq',
+                name: 'contact',
                 type: 'input',
-                message: "What are some frequently asked questions?"
+                message: "What is your GitHub username?"
             }];
     }
     async generateREADME(){
@@ -201,7 +201,7 @@ class README{
             content += this.generateLicense();
             content += this.generateContributing();
             content += this.generateTests();
-            content += this.generateFAQ();
+            content += this.generateContact();
             fs.writeFileSync('./README.md', content);
             console.log(content);
         }
@@ -231,7 +231,7 @@ class README{
         tableOfContents += generateMarkdown.generateLinkedListItem('License');
         tableOfContents += generateMarkdown.generateLinkedListItem('Contributing');
         tableOfContents += generateMarkdown.generateLinkedListItem('Tests');
-        tableOfContents += generateMarkdown.generateLinkedListItem('FAQ');
+        tableOfContents += generateMarkdown.generateLinkedListItem('CONTACT');
         return tableOfContents;
     }
     generateInstallation(){
@@ -264,11 +264,11 @@ class README{
         tests += generateMarkdown.generateText(this.tests);
         return tests;
     }
-    generateFAQ(){
-        let faq = '';
-        faq += generateMarkdown.generateLinkedH2('FAQ');
-        faq += generateMarkdown.generateText(this.faq);
-        return faq;
+    generateContact(){
+        let contact = '';
+        contact += generateMarkdown.generateLinkedH2('Contact');
+        contact += generateMarkdown.generateLink(this.contact);
+        return contact;
     }
     async askQuestions(){
         await inquirer.prompt(this.questions)
@@ -310,7 +310,7 @@ class README{
             }
             this.contributing = data.contributing;
             this.tests = data.tests;
-            this.faq = data.faq;
+            this.contact = data.contact;
         });
     }
 }
