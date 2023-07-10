@@ -16,98 +16,98 @@ const license = require('./classLicense.js');
 let apache2 = new license.License('Apache 2.0 License', 'https://opensource.org/licenses/Apache-2.0', 'https://img.shields.io/badge/License-Apache_2.0-blue.svg');
 apache2.returnDescription = function(){
     return `
-    Copyright ${this.year} ${this.owner}
+Copyright ${this.year} ${this.owner}
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.`;};
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.`;};
 
 let BSD3Clause = new license.License('BSD 3-Clause License', 'https://opensource.org/licenses/BSD-3-Clause', 'https://img.shields.io/badge/License-BSD_2--Clause-orange.svg');
 BSD3Clause.returnDescription = function(){
     return `
-    Note: This license has also been called the “New BSD License” or “Modified BSD License”. See also the 2-clause BSD License.
+Note: This license has also been called the “New BSD License” or “Modified BSD License”. See also the 2-clause BSD License.
 
-    Copyright ${this.year} ${this.owner}
+Copyright ${this.year} ${this.owner}
 
-    Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
-    1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 
-    2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
-    3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
-    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.`;};
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.`;};
 
 let BSD2Clause = new license.License('BSD 2-Clause License', 'https://opensource.org/licenses/BSD-2-Clause', 'https://img.shields.io/badge/License-BSD_2--Clause-orange.svg');
 BSD2Clause.returnDescription = function(){
     return `
-    Note: This license has also been called the “Simplified BSD License” and the “FreeBSD License”. See also the 3-clause BSD License.
+Note: This license has also been called the “Simplified BSD License” and the “FreeBSD License”. See also the 3-clause BSD License.
 
-    Copyright ${this.year} ${this.owner}
+Copyright ${this.year} ${this.owner}
 
-    Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
-    1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 
-    2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
-    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.`;};
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.`;};
 
 let GNUGPLv3 = new license.License('GNU GPL v3', 'https://www.gnu.org/licenses/gpl-3.0', 'https://img.shields.io/badge/License-GPLv3-blue.svg');
 GNUGPLv3.returnDescription = function(){
     return `
-    ${this.programDescription}
-    Copyright (C) ${this.year} ${this.owner}
+${this.programDescription}
+Copyright (C) ${this.year} ${this.owner}
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.`;};
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.`;};
 
-let GNULGPLv3 = new license.License('GNU LGPL v3', 'https://img.shields.io/badge/License-LGPL_v3-blue.svg', 'https://www.gnu.org/licenses/lgpl-3.0');
+let GNULGPLv3 = new license.License('GNU LGPL v3', 'https://www.gnu.org/licenses/lgpl-3.0', 'https://img.shields.io/badge/License-LGPL_v3-blue.svg');
 GNULGPLv3.returnDescription = function(){
     return `
-    ${this.programDescription}
-    Copyright (C) ${this.year} ${this.owner}
+${this.programDescription}
+Copyright (C) ${this.year} ${this.owner}
 
-    This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
-    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.`;};
+You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.`;};
 
-let MIT = new license.License('The MIT License', 'https://img.shields.io/badge/License-MIT-yellow.svg', 'https://opensource.org/licenses/MIT');
+let MIT = new license.License('The MIT License', 'https://opensource.org/licenses/MIT', 'https://img.shields.io/badge/License-MIT-yellow.svg');
 MIT.returnDescription = function(){
     return `
-    Copyright ${MIT.year} ${MIT.owner}
+Copyright ${MIT.year} ${MIT.owner}
 
-    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-    THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.`;};
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.`;};
 
-let mozilla2 = new license.License('Mozilla Public License 2.0', 'https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg', 'https://opensource.org/licenses/MPL-2.0');
+let mozilla2 = new license.License('Mozilla Public License 2.0', 'https://opensource.org/licenses/MPL-2.0', 'https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg');
 mozilla2.returnDescription = function(){
     return `
-    This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/`;};
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/`;};
 
 /**
  * Creates a README data object.
@@ -170,6 +170,7 @@ class README{
                     GNULGPLv3.title,
                     MIT.title,
                     mozilla2.title,
+                    'None'
                 ]
             },
             {
@@ -193,7 +194,6 @@ class README{
             await this.askQuestions();
             let content = '';
             content += this.generateTitle();
-            content += this.generateLicenseBadge();
             content += this.generateDescription();
             content += this.generateTableOfContents();
             content += this.generateInstallation();
@@ -210,10 +210,12 @@ class README{
         }
     }
     generateTitle(){
-        return generateMarkdown.generateH1(this.title);
-    }
-    generateLicenseBadge(){
-        return generateMarkdown.renderLicenseBadge(this.license);
+        if(this.license != null){
+            return generateMarkdown.generateTitleLicense(this.title, this.license);
+        }
+        else{
+            return generateMarkdown.generateTitle(this.title);
+        }
     }
     generateDescription(){
         let description = '';
@@ -223,51 +225,77 @@ class README{
     }
     generateTableOfContents(){
         let tableOfContents = '';
-        tableOfContents += generateMarkdown.generateH2('Table of Contents');
+        let contents = '';
         if(this.installation != ''){
-            tableOfContents += generateMarkdown.generateLinkedListItem('Installation');
+            contents += generateMarkdown.generateLinkedListItem('Installation');
         }
-        tableOfContents += generateMarkdown.generateLinkedListItem('Usage');
-        tableOfContents += generateMarkdown.generateLinkedListItem('License');
-        tableOfContents += generateMarkdown.generateLinkedListItem('Contributing');
-        tableOfContents += generateMarkdown.generateLinkedListItem('Tests');
-        tableOfContents += generateMarkdown.generateLinkedListItem('Contact');
+        if(this.usage != ''){
+            contents += generateMarkdown.generateLinkedListItem('Usage');
+        }
+        if(this.license != null){
+            contents += generateMarkdown.generateLinkedListItem('License');
+        }
+        if(this.contributing != ''){
+            contents += generateMarkdown.generateLinkedListItem('Contributing');
+        }
+        if(this.tests != ''){
+            contents += generateMarkdown.generateLinkedListItem('Tests');
+        }
+        if(this.contact != ''){
+            contents += generateMarkdown.generateLinkedListItem('Contact');
+        }
+        if(contents != ''){
+            tableOfContents += generateMarkdown.generateH2('Table of Contents');
+            tableOfContents += contents;
+        }
         return tableOfContents;
     }
     generateInstallation(){
         let installation = '';
-        installation += generateMarkdown.generateLinkedH2('Installation');
-        installation += generateMarkdown.generateText(this.installation);
+        if(this.installation != ''){
+            installation += generateMarkdown.generateLinkedH2('Installation');
+            installation += generateMarkdown.generateText(this.installation);
+        }
         return installation;
     }
     generateUsage(){
         let usage = '';
-        usage += generateMarkdown.generateLinkedH2('Usage');
-        usage += generateMarkdown.generateText(this.usage);
+        if(this.usage != ''){
+            usage += generateMarkdown.generateLinkedH2('Usage');
+            usage += generateMarkdown.generateText(this.usage);
+        }
         return usage;
     }
     generateLicense(){
         let license = '';
-        license += generateMarkdown.generateLinkedH2('License');
-        license += generateMarkdown.generateText(this.license.returnDescription());
+        if(this.license != null){
+            license += generateMarkdown.generateLinkedH2('License');
+            license += generateMarkdown.generateText(this.license.returnDescription());
+        }
         return license;
     }
     generateContributing(){
         let contributing = '';
-        contributing += generateMarkdown.generateLinkedH2('Contributing');
-        contributing += generateMarkdown.generateText(this.contributing);
+        if(this.contributing != ''){
+            contributing += generateMarkdown.generateLinkedH2('Contributing');
+            contributing += generateMarkdown.generateText(this.contributing);
+        }
         return contributing;
     }
     generateTests(){
         let tests = '';
-        tests += generateMarkdown.generateLinkedH2('Tests');
-        tests += generateMarkdown.generateText(this.tests);
+        if(this.tests != ''){
+            tests += generateMarkdown.generateLinkedH2('Tests');
+            tests += generateMarkdown.generateText(this.tests);
+        }
         return tests;
     }
     generateContact(){
         let contact = '';
-        contact += generateMarkdown.generateLinkedH2('Contact');
-        contact += generateMarkdown.generateLink(this.contact);
+        if(this.contact != ''){
+            contact += generateMarkdown.generateLinkedH2('Contact');
+            contact += generateMarkdown.generateLink(this.contact);
+        }
         return contact;
     }
     async askQuestions(){
@@ -303,7 +331,7 @@ class README{
                     this.license = null;
                     break;
             };
-            if(license != null){
+            if(this.license != null){
                 this.license.owner = data.contributing;
                 this.license.year = new Date().getFullYear();
                 this.license.programDescription = data.description;

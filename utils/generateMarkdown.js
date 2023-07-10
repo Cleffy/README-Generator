@@ -1,20 +1,13 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {
-  if(license == null){
-    return '';
-  }
-  else{
-    return `[![License: ${license.title}](${license.badge})](${license.link})
-    `;
-  }
-}
-
 // Creates a Title Header
-function generateH1(data) {
+function generateTitleLicense(data, license) {
+  return `# ${data} [![License: ${license.title}](${license.badge})](${license.link})
+  `;
+}
+function generateTitle(data) {
   return `# ${data}
   `;
 }
+
 function generateH2(data) {
   return `## ${data}
   `;
@@ -25,7 +18,7 @@ function generateLinkedH2(data) {
   `;
 }
 function generateText(data) {
-  return `${data}
+  return `${data}  
   `;
 }
 function generateLinkedListItem(data) {
@@ -34,8 +27,8 @@ function generateLinkedListItem(data) {
   `
 }
 function generateLink(data) {
-  return `[${data}](https://github.com/${data}/)
+  return `[${data}](https://github.com/${data}/)  
   `;
 }
 
-module.exports = { renderLicenseBadge, generateH1, generateH2, generateLinkedH2, generateText, generateLinkedListItem, generateLink};
+module.exports = { generateTitle, generateTitleLicense, generateH2, generateLinkedH2, generateText, generateLinkedListItem, generateLink};
