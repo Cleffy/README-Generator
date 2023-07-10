@@ -6,6 +6,7 @@ class License{
       this.description = description;
       this.year = 'year';
       this.owner = 'owner';
+      this.programDescription = '';
     }
   }
 
