@@ -44,6 +44,7 @@ function generateCitation(author, title, link, date){
   if(link){
     cite += ' <' + link + '>';
   }
+  cite += '<br>';
   return cite;
 }
 module.exports = { generateTitle, generateTitleLicense, generateH2, generateLinkedH2, generateText, generateLinkedListItem, generateLink, generateCitation };
