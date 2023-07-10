@@ -158,6 +158,11 @@ class README{
                 message: "Give a small summary of the project."
             },
             {
+                name: 'developer',
+                type: 'input',
+                message: "Who is the developer of the project?"
+            },
+            {
                 name: 'installation',
                 type: 'input',
                 message: "Describe the installation procedure."
@@ -185,7 +190,7 @@ class README{
             {
                 name: 'contributing',
                 type: 'input',
-                message: "Who contributed to this project?"
+                message: "How can someone contribute to the project?"
             },
             {
                 name: 'tests',
@@ -309,7 +314,7 @@ class README{
         if(this.contact != ''){
             contact += generateMarkdown.generateLinkedH2('Contact');
             contact += generateMarkdown.generateLink('Contact Us', `mailto:${this.email}`)
-            contact += generateMarkdown.generateLink('GitHub', `https://github.com/${this.gitHub}/`);
+            contact += generateMarkdown.generateLink(`GitHub - ${this.gitHub}`, `https://github.com/${this.gitHub}/`);
         }
         return contact;
     }
@@ -349,7 +354,7 @@ class README{
                     break;
             };
             if(this.license != null){
-                this.license.owner = data.contributing;
+                this.license.owner = data.developer;
                 this.license.year = new Date().getFullYear();
                 this.license.programDescription = data.description;
             }
