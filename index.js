@@ -45,6 +45,46 @@ class README{
                 name: 'description',
                 type: 'input',
                 message: "Give a small summary of the project."
+            },
+            {
+                name: 'installation',
+                type: 'input',
+                message: "Describe the installation procedure."
+            },
+            {
+                name: 'usage',
+                type: 'input',
+                message: "How do you use this project?"
+            },
+            {
+                //license list from https://www.techtarget.com/searchsoftwarequality/tip/5-common-open-source-software-licenses-you-need-to-know
+                name: 'license',
+                type: 'rawlist',
+                message: "What is the title of the project?",
+                choices: [
+                    'Apache License 2.0',
+                    'Simplified BSD License',
+                    'FreeBSD License',
+                    'GNU General Public License (GPL)',
+                    'GNU Lesse General Public License (LGPL)',
+                    'MIT License',
+                    'Mozilla Public License (MPL) 2.0'
+                ]
+            },
+            {
+                name: 'contributing',
+                type: 'input',
+                message: "Who contributed to this project?"
+            },
+            {
+                name: 'tests',
+                type: 'input',
+                message: "What are some tests for this project?"
+            },
+            {
+                name: 'faq',
+                type: 'input',
+                message: "What are some frequently asked questions?"
             }];
     }
     async generateREADME(){
@@ -130,6 +170,12 @@ class README{
         .then((data) => {
             this.title = data.title;
             this.description = data.description;
+            this.installation = data.installation;
+            this.usage = data.usage;
+            this.license = data.license;
+            this.contributing = data.contributing;
+            this.tests = data.tests;
+            this.faq = data.faq;
         })
     }
 }

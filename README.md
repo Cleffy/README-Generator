@@ -1,6 +1,6 @@
-# safda
+# README Generator
   ## Description
-  asfaghhg
+  Creates a README.md file
   ## Table of Contents
   [Installation](#Installation)  
   [Usage](#Usage)  
@@ -9,15 +9,15 @@
   [Tests](#Tests)  
   [FAQ](#FAQ)  
   ## <div id="Installation">Installation</div>
-  undefined
+  Clone the project and in the terminal run 'node index.js'
   ## <div id="Usage">Usage</div>
-  undefined
+  Run 'node index.js
   ## <div id="License">License</div>
-  undefined
+  MIT License
   ## <div id="Contributing">Contributing</div>
-  undefined
+  Cleffy
   ## <div id="Tests">Tests</div>
-  undefined
+  
   ## <div id="FAQ">FAQ</div>
-  undefined
+  
   
