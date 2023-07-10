@@ -1,6 +1,9 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  return `[![License: ${license.title}](${license.badge})](${license.link})
+  `;
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
@@ -34,4 +37,4 @@ function generateLinkedListItem(data) {
   `
 }
 
-module.exports = { generateH1, generateH2, generateLinkedH2, generateText, generateLinkedListItem};
+module.exports = { renderLicenseBadge, generateH1, generateH2, generateLinkedH2, generateText, generateLinkedListItem};

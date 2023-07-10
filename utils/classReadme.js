@@ -115,6 +115,7 @@ class README{
         this.faq;
         this.gitHub;
         this.email;
+        this.license;
         this.questions = [{
                 name: 'title',
                 type: 'input',
@@ -141,13 +142,13 @@ class README{
                 type: 'rawlist',
                 message: "What is the title of the project?",
                 choices: [
-                    'Apache 2.0 License',
-                    'BSD 3-Clause License',
-                    'BSD 2-Clause License',
-                    'GNU General Public License (GPL)',
-                    'GNU Lesse General Public License (LGPL)',
-                    'MIT License',
-                    'Mozilla Public License (MPL) 2.0'
+                    apache2.title,
+                    BSD3Clause.title,
+                    BSD2Clause.title,
+                    GNUGPLv3.title,
+                    GNULGPLv3.title,
+                    MIT.title,
+                    mozilla2.title,
                 ]
             },
             {
@@ -171,6 +172,7 @@ class README{
             await this.askQuestions();
             let content = '';
             content += this.generateTitle();
+            content += this.generateLicenseBadge();
             content += this.generateDescription();
             content += this.generateTableOfContents();
             content += this.generateInstallation();
@@ -188,6 +190,9 @@ class README{
     }
     generateTitle(){
         return generateMarkdown.generateH1(this.title);
+    }
+    generateLicenseBadge(){
+        return generateMarkdown.renderLicenseBadge(this.license);
     }
     generateDescription(){
         let description = '';
@@ -223,7 +228,7 @@ class README{
     generateLicense(){
         let license = '';
         license += generateMarkdown.generateLinkedH2('License');
-        license += generateMarkdown.generateText(this.license);
+        license += generateMarkdown.generateText(this.license.description);
         return license;
     }
     generateContributing(){
@@ -251,7 +256,32 @@ class README{
             this.description = data.description;
             this.installation = data.installation;
             this.usage = data.usage;
-            this.license = data.license;
+            switch(data.license){
+                case apache2.title:
+                    this.license = apache2;
+                    break;
+                case BSD3Clause.title:
+                    this.license = BSD3Clause;
+                    break;
+                case BSD2Clause.title:
+                    this.license = BSD2Clause;
+                    break;
+                case GNUGPLv3.title:
+                    this.license = GNUGPLv3;
+                    break;
+                case GNULGPLv3.title:
+                    this.license = GNULGPLv3;
+                    break;
+                case MIT.title:
+                    this.license = MIT;
+                    break;
+                case mozilla2.title:
+                    this.license = mozilla2;
+                    break;
+            };
+            this.license.owner = data.contributing;
+            this.license.year = new Date().getFullYear();
+            this.license.programDescription = data.description;
             this.contributing = data.contributing;
             this.tests = data.tests;
             this.faq = data.faq;
