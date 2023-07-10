@@ -147,6 +147,7 @@ class README{
         this.gitHub;
         this.email;
         this.license;
+        this.credits = new Array();
         this.questions = [{
                 name: 'title',
                 type: 'input',
@@ -319,6 +320,7 @@ class README{
         return contact;
     }
     async askQuestions(){
+        let needsCredits = true;
         await inquirer.prompt(this.questions)
         .then((data) => {
             this.title = data.title;
@@ -363,6 +365,51 @@ class README{
             this.gitHub = data.gitHub;
             this.email = data.email;
         });
+        while(needsCredits){
+            await inquirer.prompt([
+                {
+                    name: 'credit',
+                    type: 'confirm',
+                    message: 'Do you want to add a reference?'
+                }
+            ])
+            .then(async (data) => {
+                needsCredits = data.credit;
+                if(needsCredits){
+                    await inquirer.prompt([
+                        {
+                            name: 'author',
+                            type: 'input',
+                            message: 'Who is the author?'
+                        },
+                        {
+                            name: 'title',
+                            type: 'input',
+                            message: 'What is the title?'
+                        },
+                        {
+                            name: 'link',
+                            type: 'input',
+                            message: 'What is the HTML address?'
+                        },
+                        {
+                            name: 'date',
+                            type: 'input',
+                            message: 'When was it published?'
+                        }
+                    ])
+                    .then((answers) => {
+                        let reference = {
+                            author: answers.author,
+                            title: answers.title,
+                            link: answers.link,
+                            date: answers.date
+                        };
+                        this.credits.push(reference);
+                    });
+                }
+            });
+        }
     }
 }
 
