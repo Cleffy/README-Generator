@@ -8,9 +8,13 @@
   [Contact](#Contact)  
   [References](#References)  
   ## <div id="Installation">Installation</div>
-  To install the generator, clone the GitHub repository. node.js is required.  
+  To install the generator, clone the GitHub repository.  
+  node.js is required.  
   ## <div id="Usage">Usage</div>
-  In the terminal in the README Generator directory, enter 'node index.js', answer the questions or leave the answer blank to exclude the section, move the generated README.md to the project directory  
+  - Using the terminal from the README Generator directory
+  - Enter 'node index.js'
+  - Answer the questions or leave the answer blank to exclude the section
+  - Move the generated 'README.md' file to the respective project directory  
   ## <div id="License">License</div>
   
 Copyright 2023 Kevin Smith
