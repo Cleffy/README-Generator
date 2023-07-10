@@ -23,11 +23,10 @@ function generateText(data) {
 }
 function generateLinkedListItem(data) {
   let link = '#' + data.replace(/\s+/g, '-');
-  return `[${data}](${link})  
-  `
+  return generateLink(data, link);
 }
-function generateLink(data) {
-  return `[${data}](https://github.com/${data}/)  
+function generateLink(headline, link) {
+  return `[${headline}](${link})  
   `;
 }
 

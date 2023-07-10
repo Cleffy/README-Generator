@@ -193,9 +193,14 @@ class README{
                 message: "What are some tests for this project?"
             },
             {
-                name: 'contact',
+                name: 'gitHub',
                 type: 'input',
                 message: "What is your GitHub username?"
+            },
+            {
+                name: 'email',
+                type: 'input',
+                message: "What is the project's contact email?"
             }];
     }
     async generateREADME(){
@@ -303,7 +308,8 @@ class README{
         let contact = '';
         if(this.contact != ''){
             contact += generateMarkdown.generateLinkedH2('Contact');
-            contact += generateMarkdown.generateLink(this.contact);
+            contact += generateMarkdown.generateLink('Contact Us', `mailto:${this.email}`)
+            contact += generateMarkdown.generateLink('GitHub', `https://github.com/${this.gitHub}/`);
         }
         return contact;
     }
@@ -349,7 +355,8 @@ class README{
             }
             this.contributing = data.contributing;
             this.tests = data.tests;
-            this.contact = data.contact;
+            this.gitHub = data.gitHub;
+            this.email = data.email;
         });
     }
 }
