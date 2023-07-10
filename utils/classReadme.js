@@ -299,14 +299,19 @@ class README{
                 case mozilla2.title:
                     this.license = mozilla2;
                     break;
+                default:
+                    this.license = null;
+                    break;
             };
-            this.license.owner = data.contributing;
-            this.license.year = new Date().getFullYear();
-            this.license.programDescription = data.description;
+            if(license != null){
+                this.license.owner = data.contributing;
+                this.license.year = new Date().getFullYear();
+                this.license.programDescription = data.description;
+            }
             this.contributing = data.contributing;
             this.tests = data.tests;
             this.faq = data.faq;
-        })
+        });
     }
 }
 
