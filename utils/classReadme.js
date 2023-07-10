@@ -231,7 +231,7 @@ class README{
         tableOfContents += generateMarkdown.generateLinkedListItem('License');
         tableOfContents += generateMarkdown.generateLinkedListItem('Contributing');
         tableOfContents += generateMarkdown.generateLinkedListItem('Tests');
-        tableOfContents += generateMarkdown.generateLinkedListItem('CONTACT');
+        tableOfContents += generateMarkdown.generateLinkedListItem('Contact');
         return tableOfContents;
     }
     generateInstallation(){

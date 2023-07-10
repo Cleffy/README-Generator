@@ -2,10 +2,11 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if(license == null){
-    return ''
+    return '';
   }
   else{
-    return `[![License: ${license.title}](${license.badge})](${license.link})`;
+    return `[![License: ${license.title}](${license.badge})](${license.link})
+    `;
   }
 }
 
