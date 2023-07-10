@@ -147,7 +147,7 @@ class README{
         this.gitHub;
         this.email;
         this.license;
-        this.credits = new Array();
+        this.reference = new Array();
         this.questions = [{
                 name: 'title',
                 type: 'input',
@@ -222,6 +222,7 @@ class README{
             content += this.generateContributing();
             content += this.generateTests();
             content += this.generateContact();
+            content += this.generateReferences();
             fs.writeFileSync('./README.md', content);
             console.log(content);
         }
@@ -263,6 +264,9 @@ class README{
         }
         if(this.contact != ''){
             contents += generateMarkdown.generateLinkedListItem('Contact');
+        }
+        if(this.reference.length > 0){
+            contents += generateMarkdown.generateLinkedListItem('References');
         }
         if(contents != ''){
             tableOfContents += generateMarkdown.generateH2('Table of Contents');
@@ -319,8 +323,20 @@ class README{
         }
         return contact;
     }
+    generateReferences(){
+        let references = '';
+        if(this.reference.length > 0){
+            for(let credit of this.reference){
+                references += generateMarkdown.generateText(`${credit.author}. *${credit.title}*, ${credit.date}`);
+                if(credit.link != ''){
+                    references += generateMarkdown.generateLink(credit.link, credit.link);
+                }
+            }
+        }
+        return references;
+    }
     async askQuestions(){
-        let needsCredits = true;
+        let needsReference = true;
         await inquirer.prompt(this.questions)
         .then((data) => {
             this.title = data.title;
@@ -365,7 +381,7 @@ class README{
             this.gitHub = data.gitHub;
             this.email = data.email;
         });
-        while(needsCredits){
+        while(needsReference){
             await inquirer.prompt([
                 {
                     name: 'credit',
@@ -374,8 +390,8 @@ class README{
                 }
             ])
             .then(async (data) => {
-                needsCredits = data.credit;
-                if(needsCredits){
+                needsReference = data.credit;
+                if(needsReference){
                     await inquirer.prompt([
                         {
                             name: 'author',
@@ -399,13 +415,15 @@ class README{
                         }
                     ])
                     .then((answers) => {
-                        let reference = {
-                            author: answers.author,
-                            title: answers.title,
-                            link: answers.link,
-                            date: answers.date
-                        };
-                        this.credits.push(reference);
+                        if(answers.author != '' || answers.title != '' || answers.link != ''){
+                            let reference = {
+                                author: answers.author,
+                                title: answers.title,
+                                link: answers.link,
+                                date: answers.date
+                            };
+                            this.reference.push(reference);
+                        }
                     });
                 }
             });
