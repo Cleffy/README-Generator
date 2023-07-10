@@ -123,17 +123,30 @@ This Source Code Form is subject to the terms of the Mozilla Public License, v. 
  * @class
  * @classdesc This object takes in strings to build a README.md file
  * It takes no inputs and the parameters should be entered in manually.
- * Null values will not be entered put into the README.
- * @property {string} title         -Title of Project
- * @property {string} description   -Description of Project
- * @property {string} installation  -Installation Instructions
- * @property {string} usage         -Usage Information
- * @property {string} contribution  -Contribution Guidelines
- * @property {string} test          -Test Instructions
- * @property {string} gitHub        -User GitHub Profile
- * @property {string} email         -User Email
- * @property {array} questions      -Questions for user input
- * @method generateREADME()         -Generates a README.md file in the working directory
+ * Empty values will not be entered put into the README.
+ * @property {string} title             -Title of Project
+ * @property {string} description       -Description of Project
+ * @property {string} installation      -Installation Instructions
+ * @property {string} usage             -Usage Information
+ * @property {string} contribution      -Contribution Guidelines
+ * @property {string} test              -Test Instructions
+ * @property {string} gitHub            -User GitHub Profile
+ * @property {string} email             -User Email
+ * @property {License} license          -The license of the Project
+ * @property {array} references         -References related to the Project
+ * @property {array} questions          -Questions for user input
+ * @method generateREADME()             -Generates a README.md file in the working directory
+ * @method generateTitle()              -Generates the Title section
+ * @method generateDescription()        -Generates the Description section
+ * @method generateTableOfContents()    -Generates the Table of contents
+ * @method generateInstallation()       -Generates the Installation section
+ * @method generateUsage()              -Generates the Usage section
+ * @method generateLicense()            -Generates the License section
+ * @method generateContribution()       -Generates the Contribution section
+ * @method generateTests()              -Generates the Tests section
+ * @method generateContact()            -Generates the Contact section
+ * @method generateReferences()         -Generates the References section
+ * @method askQuestions()               -Asks the user a series of questions
  */
 class README{
     constructor(){
@@ -141,13 +154,12 @@ class README{
         this.description;
         this.installation;
         this.usage;
-        this.contributing;
+        this.contribution;
         this.test;
-        this.contact;
         this.gitHub;
         this.email;
         this.license;
-        this.reference = new Array();
+        this.references = new Array();
         this.questions = [{
                 name: 'title',
                 type: 'input',
@@ -189,7 +201,7 @@ class README{
                 ]
             },
             {
-                name: 'contributing',
+                name: 'contribution',
                 type: 'input',
                 message: "How can someone contribute to the project?"
             },
@@ -209,6 +221,7 @@ class README{
                 message: "What is the project's contact email?"
             }];
     }
+
     async generateREADME(){
         try{
             await this.askQuestions();
@@ -219,7 +232,7 @@ class README{
             content += this.generateInstallation();
             content += this.generateUsage();
             content += this.generateLicense();
-            content += this.generateContributing();
+            content += this.generateContribution();
             content += this.generateTests();
             content += this.generateContact();
             content += this.generateReferences();
@@ -256,13 +269,13 @@ class README{
         if(this.license != null){
             contents += generateMarkdown.generateLinkedListItem('License');
         }
-        if(this.contributing != ''){
-            contents += generateMarkdown.generateLinkedListItem('Contributing');
+        if(this.contribution != ''){
+            contents += generateMarkdown.generateLinkedListItem('Contribution');
         }
         if(this.tests != ''){
             contents += generateMarkdown.generateLinkedListItem('Tests');
         }
-        if(this.contact != ''){
+        if(this.email != '' || this.gitHub != ''){
             contents += generateMarkdown.generateLinkedListItem('Contact');
         }
         if(this.reference.length > 0){
@@ -298,13 +311,13 @@ class README{
         }
         return license;
     }
-    generateContributing(){
-        let contributing = '';
-        if(this.contributing != ''){
-            contributing += generateMarkdown.generateLinkedH2('Contributing');
-            contributing += generateMarkdown.generateText(this.contributing);
+    generateContribution(){
+        let contribution = '';
+        if(this.contribution != ''){
+            contribution += generateMarkdown.generateLinkedH2('Contribution');
+            contribution += generateMarkdown.generateText(this.contribution);
         }
-        return contributing;
+        return contribution;
     }
     generateTests(){
         let tests = '';
@@ -330,15 +343,16 @@ class README{
         return contact;
     }
     generateReferences(){
-        let references = '';
-        if(this.reference.length > 0){
-            references += generateMarkdown.generateLinkedH2('References');
-            for(let credit of this.reference){
-                references += generateMarkdown.generateCitation(credit.author, credit.title, credit.link, credit.date);
+        let reference = '';
+        if(this.references.length > 0){
+            reference += generateMarkdown.generateLinkedH2('References');
+            for(let credit of this.references){
+                reference += generateMarkdown.generateCitation(credit.author, credit.title, credit.link, credit.date);
             }
         }
-        return references;
+        return reference;
     }
+    
     async askQuestions(){
         let needsReference = true;
         await inquirer.prompt(this.questions)
@@ -380,7 +394,7 @@ class README{
                 this.license.year = new Date().getFullYear();
                 this.license.programDescription = data.description;
             }
-            this.contributing = data.contributing;
+            this.contribution = data.contribution;
             this.tests = data.tests;
             this.gitHub = data.gitHub;
             this.email = data.email;
@@ -426,7 +440,7 @@ class README{
                                 link: answers.link,
                                 date: answers.date
                             };
-                            this.reference.push(reference);
+                            this.references.push(reference);
                         }
                     });
                 }
