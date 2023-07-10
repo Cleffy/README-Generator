@@ -316,10 +316,16 @@ class README{
     }
     generateContact(){
         let contact = '';
-        if(this.contact != ''){
-            contact += generateMarkdown.generateLinkedH2('Contact');
-            contact += generateMarkdown.generateLink('Contact Us', `mailto:${this.email}`)
-            contact += generateMarkdown.generateLink(`GitHub - ${this.gitHub}`, `https://github.com/${this.gitHub}/`);
+        let content = '';
+        if(this.email != ''){
+            content += generateMarkdown.generateLink('Contact Us', `mailto:${this.email}`);
+        }
+        if(this.gitHub != ''){
+            content += generateMarkdown.generateLink(`GitHub - ${this.gitHub}`, `https://github.com/${this.gitHub}/`);
+        }
+        if(content != ''){
+            contact += generateMarkdown.generateLinkedH2('Contact') + contact;
+            contact += content;
         }
         return contact;
     }
@@ -328,21 +334,7 @@ class README{
         if(this.reference.length > 0){
             references += generateMarkdown.generateLinkedH2('References');
             for(let credit of this.reference){
-                let text = '';
-                text += credit.author;
-                if(credit.author && credit.title){
-                    text += '. ';
-                }
-                if(credit.title){
-                    text += '*' + credit.title + '*';
-                }
-                if((credit.author || credit.title) && credit.date){
-                    text += ', ' + credit.date;
-                }
-                references += generateMarkdown.generateText(text);
-                if(credit.link != ''){
-                    references += generateMarkdown.generateLink(credit.link, credit.link);
-                }
+                references += generateMarkdown.generateCitation(credit.author, credit.title, credit.link, credit.date);
             }
         }
         return references;

@@ -29,5 +29,21 @@ function generateLink(headline, link) {
   return `[${headline}](${link})  
   `;
 }
-
-module.exports = { generateTitle, generateTitleLicense, generateH2, generateLinkedH2, generateText, generateLinkedListItem, generateLink};
+function generateCitation(author, title, link, date){
+  let cite = '';
+  cite += author;
+  if(author != '' && title != ''){
+    cite += '. ';
+  }
+  if(title != ''){
+    cite += '*' + title + '*';
+  }
+  if((author != '' || title != '') && date != ''){
+    cite += ', ' + date;
+  }
+  if(link){
+    cite += ' <' + link + '>';
+  }
+  return cite;
+}
+module.exports = { generateTitle, generateTitleLicense, generateH2, generateLinkedH2, generateText, generateLinkedListItem, generateLink, generateCitation };
