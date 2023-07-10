@@ -326,8 +326,20 @@ class README{
     generateReferences(){
         let references = '';
         if(this.reference.length > 0){
+            references += generateMarkdown.generateLinkedH2('References');
             for(let credit of this.reference){
-                references += generateMarkdown.generateText(`${credit.author}. *${credit.title}*, ${credit.date}`);
+                let text = '';
+                text += credit.author;
+                if(credit.author && credit.title){
+                    text += '. ';
+                }
+                if(credit.title){
+                    text += '*' + credit.title + '*';
+                }
+                if((credit.author || credit.title) && credit.date){
+                    text += ', ' + credit.date;
+                }
+                references += generateMarkdown.generateText(text);
                 if(credit.link != ''){
                     references += generateMarkdown.generateLink(credit.link, credit.link);
                 }
