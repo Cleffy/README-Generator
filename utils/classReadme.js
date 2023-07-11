@@ -354,6 +354,10 @@ class README{
     }
     
     async askQuestions(){
+        console.log("Answer the following questions to the best of your knowledge.");
+        console.log("If a section is not needed, leave the answer blank.");
+        console.log("Move the generated './output/README.md' to your projects root folder.");
+        console.log("Edit this file if more information is needed.");
         let needsReference = true;
         await inquirer.prompt(this.questions)
         .then((data) => {
