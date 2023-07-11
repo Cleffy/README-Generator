@@ -11,6 +11,11 @@
   To install the generator, clone the GitHub repository.  
   node.js is required.  
   ## <div id="Usage">Usage</div>
+  <video width="960" height="540" controls>
+    <source src="./assets/README-Generator Usage.mp4" type="video/mp4">
+  </video>  
+  
+  [README Generator Usage Video](./assets/README-Generator%20Usage.mp4)
   - Using the terminal from the README Generator directory
   - Enter 'node index.js'
   - Answer the questions or leave the answer blank to exclude the section
@@ -27,5 +32,9 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
   ## <div id="Contact">Contact</div>
   [GitHub - Cleffy](https://github.com/Cleffy/)  
   ## <div id="References">References</div>
-  Markdown Guide <https://www.markdownguide.org/><br>node.js <https://nodejs.org/><br>Inquirer.js <https://github.com/SBoudrias/Inquirer.js/blob/master/packages/inquirer/README.md><br>Tech Target, 
-Stephen J. Bigelow. *5 common open source software licenses you need to know*, 28 Jun 2019 <https://www.techtarget.com/searchsoftwarequality/tip/5-common-open-source-software-licenses-you-need-to-know><br>Markdown License badges <https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba><br>
+  Markdown Guide <https://www.markdownguide.org/><br>
+  node.js <https://nodejs.org/><br>
+  Inquirer.js <https://github.com/SBoudrias/Inquirer.js/blob/master/packages/inquirer/README.md><br>
+  Tech Target, 
+Stephen J. Bigelow. *5 common open source software licenses you need to know*, 28 Jun 2019 <https://www.techtarget.com/searchsoftwarequality/tip/5-common-open-source-software-licenses-you-need-to-know><br>
+Markdown License badges <https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba><br>
