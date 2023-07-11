@@ -278,7 +278,7 @@ class README{
         if(this.email != '' || this.gitHub != ''){
             contents += generateMarkdown.generateLinkedListItem('Contact');
         }
-        if(this.reference.length > 0){
+        if(this.references.length > 0){
             contents += generateMarkdown.generateLinkedListItem('References');
         }
         if(contents != ''){
