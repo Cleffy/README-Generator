@@ -236,7 +236,7 @@ class README{
             content += this.generateTests();
             content += this.generateContact();
             content += this.generateReferences();
-            fs.writeFileSync('./README.md', content);
+            fs.writeFileSync('./output/README.md', content);
             console.log(content);
         }
         catch(error){
