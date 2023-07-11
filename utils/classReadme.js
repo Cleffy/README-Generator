@@ -236,6 +236,9 @@ class README{
             content += this.generateTests();
             content += this.generateContact();
             content += this.generateReferences();
+            if(!fs.existsSync('./output')){
+                fs.mkdirSync('./output');
+            }
             fs.writeFileSync('./output/README.md', content);
             console.log(content);
         }
